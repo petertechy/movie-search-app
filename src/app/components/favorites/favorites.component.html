@@ -1,0 +1,18 @@
+<!-- src/app/components/favorites/favorites.component.html -->
+<div class="container py-5">
+    <h2 class="text-center mb-4">⭐ Favorite Movies</h2>
+  
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let movie of favorites; let i = index">
+        <div class="card h-100">
+          <img [src]="movie.Poster !== 'N/A' ? movie.Poster : 'assets/no-image.png'" class="card-img-top" alt="{{movie.Title}}">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.Title }}</h5>
+            <p class="card-text">{{ movie.Year }}</p>
+            <button class="btn btn-danger" (click)="removeFavorite(i)">Remove ❌</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

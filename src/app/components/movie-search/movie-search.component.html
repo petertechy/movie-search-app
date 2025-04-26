@@ -1,0 +1,23 @@
+<!-- src/app/components/movie-search/movie-search.component.html -->
+<div class="container py-5">
+    <h2 class="text-center mb-4">🎬 Movie Search</h2>
+  
+    <div class="input-group mb-4">
+      <input type="text" class="form-control" [(ngModel)]="query" placeholder="Search for a movie...">
+      <button class="btn btn-primary" (click)="searchMovies()">Search</button>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let movie of movies">
+        <div class="card h-100">
+          <img [src]="movie.Poster !== 'N/A' ? movie.Poster : 'assets/no-image.png'" class="card-img-top" alt="{{movie.Title}}">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.Title }}</h5>
+            <p class="card-text">{{ movie.Year }}</p>
+            <button class="btn btn-success" (click)="addToFavorites(movie)">Add to Favorites ❤️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
