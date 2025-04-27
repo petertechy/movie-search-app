@@ -1,4 +1,5 @@
 // src/app/services/movie.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MovieService {
-  private apiUrl = 'https://www.omdbapi.com/?apikey=2bda8116'; // example
+  private apiUrl = 'https://www.omdbapi.com/?apikey=2bda8116';
 
   constructor(private http: HttpClient) {}
 
